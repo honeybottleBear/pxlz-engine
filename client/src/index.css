@@ -3,11 +3,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   PXLZ ENGINE — Design System
+   Philosophy: Dark Workstation + Pixel Accent
+   Colors: Deep navy-black base, pixel orange accent, retro red
+   Fonts: Press Start 2P (branding), JetBrains Mono (UI/code)
+   Borders: Sharp rectangles, no radius on panels
+   ============================================================ */
+
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 2px;
+  --radius-xl: 2px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -27,90 +35,45 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
+  --radius: 2px;
+  /* PXLZ Dark Theme */
+  --background: oklch(0.12 0.02 265);
+  --foreground: oklch(0.92 0.01 265);
+  --card: oklch(0.15 0.025 265);
+  --card-foreground: oklch(0.92 0.01 265);
+  --popover: oklch(0.15 0.025 265);
+  --popover-foreground: oklch(0.92 0.01 265);
+  --primary: oklch(0.65 0.18 38);
+  --primary-foreground: oklch(0.12 0.02 265);
+  --secondary: oklch(0.18 0.025 265);
+  --secondary-foreground: oklch(0.85 0.01 265);
+  --muted: oklch(0.20 0.02 265);
+  --muted-foreground: oklch(0.55 0.015 265);
+  --accent: oklch(0.55 0.22 15);
+  --accent-foreground: oklch(0.98 0.01 265);
+  --destructive: oklch(0.55 0.22 15);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.25 0.03 265);
+  --input: oklch(0.20 0.025 265);
+  --ring: oklch(0.65 0.18 38);
 
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  /* PXLZ Custom Colors */
+  --pxlz-orange: #FF6B35;
+  --pxlz-red: #E94560;
+  --pxlz-bg: #0D1117;
+  --pxlz-panel: #161B22;
+  --pxlz-panel-2: #1C2128;
+  --pxlz-border: #30363D;
+  --pxlz-border-bright: #FF6B35;
+  --pxlz-text: #E6EDF3;
+  --pxlz-text-muted: #7D8590;
+  --pxlz-green: #3FB950;
+  --pxlz-blue: #58A6FF;
+  --pxlz-yellow: #D29922;
+  --pxlz-purple: #BC8CFF;
 }
 
 @layer base {
@@ -119,6 +82,9 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--pxlz-bg);
+    color: var(--pxlz-text);
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -129,49 +95,432 @@
   select:not(:disabled),
   input[type="checkbox"]:not(:disabled),
   input[type="radio"]:not(:disabled) {
-    @apply cursor-pointer;
+    cursor: pointer;
   }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
-
   .flex {
     min-height: 0;
     min-width: 0;
   }
+}
 
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
-  }
+/* PXLZ Panel Styles */
+.pxlz-panel {
+  background: var(--pxlz-panel);
+  border: 1px solid var(--pxlz-border);
+}
 
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
-  }
+.pxlz-panel-2 {
+  background: var(--pxlz-panel-2);
+  border: 1px solid var(--pxlz-border);
+}
+
+.pxlz-btn {
+  background: var(--pxlz-panel-2);
+  border: 1px solid var(--pxlz-border);
+  color: var(--pxlz-text);
+  padding: 4px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  transition: border-color 0.1s, background 0.1s;
+  border-radius: 2px;
+}
+
+.pxlz-btn:hover {
+  border-color: var(--pxlz-orange);
+  color: var(--pxlz-orange);
+}
+
+.pxlz-btn.active, .pxlz-btn:active {
+  background: var(--pxlz-orange);
+  color: var(--pxlz-bg);
+  border-color: var(--pxlz-orange);
+}
+
+.pxlz-btn-primary {
+  background: var(--pxlz-orange);
+  border: 1px solid var(--pxlz-orange);
+  color: var(--pxlz-bg);
+  padding: 4px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: opacity 0.1s;
+}
+
+.pxlz-btn-primary:hover { opacity: 0.85; }
+
+.pxlz-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pxlz-text-muted);
+}
+
+.pxlz-section-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--pxlz-text-muted);
+  padding: 6px 10px;
+  background: var(--pxlz-bg);
+  border-bottom: 1px solid var(--pxlz-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pxlz-input {
+  background: var(--pxlz-bg);
+  border: 1px solid var(--pxlz-border);
+  color: var(--pxlz-text);
+  padding: 3px 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  border-radius: 2px;
+  outline: none;
+  width: 100%;
+}
+
+.pxlz-input:focus {
+  border-color: var(--pxlz-orange);
+}
+
+.pxlz-select {
+  background: var(--pxlz-bg);
+  border: 1px solid var(--pxlz-border);
+  color: var(--pxlz-text);
+  padding: 3px 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.pxlz-select:focus {
+  border-color: var(--pxlz-orange);
+}
+
+/* Pixel selection border */
+.pxlz-selected {
+  outline: 2px dashed var(--pxlz-orange);
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--pxlz-bg); }
+::-webkit-scrollbar-thumb { background: var(--pxlz-border); border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: var(--pxlz-orange); }
+
+/* Pixel filter for viewport */
+.pixel-canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Resize handles */
+.resize-handle {
+  background: var(--pxlz-border);
+  cursor: col-resize;
+  width: 3px;
+  transition: background 0.1s;
+  flex-shrink: 0;
+}
+.resize-handle:hover, .resize-handle.dragging {
+  background: var(--pxlz-orange);
+}
+
+.resize-handle-h {
+  background: var(--pxlz-border);
+  cursor: row-resize;
+  height: 3px;
+  transition: background 0.1s;
+  flex-shrink: 0;
+}
+.resize-handle-h:hover, .resize-handle-h.dragging {
+  background: var(--pxlz-orange);
+}
+
+/* Tree item */
+.tree-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--pxlz-text);
+  border: 1px solid transparent;
+  transition: background 0.05s;
+  user-select: none;
+}
+.tree-item:hover { background: var(--pxlz-panel-2); }
+.tree-item.selected {
+  background: rgba(255, 107, 53, 0.15);
+  border-color: var(--pxlz-orange);
+  color: var(--pxlz-orange);
+}
+
+/* Badge */
+.pxlz-badge {
+  font-size: 9px;
+  padding: 1px 4px;
+  border: 1px solid;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+/* Tab */
+.pxlz-tab {
+  padding: 4px 12px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  color: var(--pxlz-text-muted);
+  transition: color 0.1s, border-color 0.1s;
+  white-space: nowrap;
+}
+.pxlz-tab:hover { color: var(--pxlz-text); }
+.pxlz-tab.active {
+  color: var(--pxlz-orange);
+  border-bottom-color: var(--pxlz-orange);
+}
+
+/* Gizmo toolbar */
+.gizmo-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--pxlz-panel);
+  border: 1px solid var(--pxlz-border);
+  color: var(--pxlz-text-muted);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.1s;
+  border-radius: 2px;
+}
+.gizmo-btn:hover { border-color: var(--pxlz-orange); color: var(--pxlz-orange); }
+.gizmo-btn.active {
+  background: var(--pxlz-orange);
+  border-color: var(--pxlz-orange);
+  color: var(--pxlz-bg);
+}
+
+/* Play/stop buttons */
+.play-btn {
+  padding: 4px 16px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.1s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.play-btn.play {
+  background: var(--pxlz-green);
+  border-color: var(--pxlz-green);
+  color: var(--pxlz-bg);
+}
+.play-btn.play:hover { opacity: 0.85; }
+.play-btn.stop {
+  background: var(--pxlz-red);
+  border-color: var(--pxlz-red);
+  color: white;
+}
+.play-btn.stop:hover { opacity: 0.85; }
+
+/* Tooltip */
+.pxlz-tooltip {
+  position: absolute;
+  background: var(--pxlz-panel-2);
+  border: 1px solid var(--pxlz-border);
+  color: var(--pxlz-text);
+  font-size: 10px;
+  padding: 3px 8px;
+  pointer-events: none;
+  z-index: 9999;
+  white-space: nowrap;
+  border-radius: 2px;
+}
+
+/* Context menu */
+.pxlz-context-menu {
+  position: fixed;
+  background: var(--pxlz-panel-2);
+  border: 1px solid var(--pxlz-border);
+  z-index: 9999;
+  min-width: 160px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  border-radius: 2px;
+}
+.pxlz-context-item {
+  padding: 6px 12px;
+  font-size: 11px;
+  cursor: pointer;
+  color: var(--pxlz-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.05s;
+}
+.pxlz-context-item:hover { background: rgba(255,107,53,0.15); color: var(--pxlz-orange); }
+.pxlz-context-separator { height: 1px; background: var(--pxlz-border); margin: 2px 0; }
+
+/* Number input row */
+.vec3-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4px;
+}
+.vec3-input {
+  background: var(--pxlz-bg);
+  border: 1px solid var(--pxlz-border);
+  color: var(--pxlz-text);
+  padding: 2px 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  border-radius: 2px;
+  outline: none;
+  width: 100%;
+  text-align: center;
+}
+.vec3-input:focus { border-color: var(--pxlz-orange); }
+
+/* Inspector prop row */
+.prop-row {
+  display: flex;
+  align-items: center;
+  padding: 3px 10px;
+  gap: 8px;
+  border-bottom: 1px solid rgba(48,54,61,0.5);
+}
+.prop-label {
+  font-size: 10px;
+  color: var(--pxlz-text-muted);
+  min-width: 70px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+.prop-value {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Pixel art dithered separator */
+.dither-sep {
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--pxlz-border) 0px,
+    var(--pxlz-border) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+/* Modal overlay */
+.pxlz-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pxlz-modal {
+  background: var(--pxlz-panel);
+  border: 1px solid var(--pxlz-border);
+  min-width: 400px;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 2px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+.pxlz-modal-header {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--pxlz-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pxlz-orange);
+}
+.pxlz-modal-body { padding: 14px; }
+.pxlz-modal-footer {
+  padding: 10px 14px;
+  border-top: 1px solid var(--pxlz-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Console */
+.console-line {
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 1px 10px;
+  border-bottom: 1px solid rgba(48,54,61,0.3);
+}
+.console-line.error { color: var(--pxlz-red); }
+.console-line.warn { color: var(--pxlz-yellow); }
+.console-line.info { color: var(--pxlz-blue); }
+.console-line.log { color: var(--pxlz-text); }
+
+/* Primitive grid */
+.primitive-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px;
+  background: var(--pxlz-bg);
+  border: 1px solid var(--pxlz-border);
+  cursor: pointer;
+  transition: border-color 0.1s;
+  border-radius: 2px;
+}
+.primitive-card:hover {
+  border-color: var(--pxlz-orange);
+}
+.primitive-card span {
+  font-size: 9px;
+  color: var(--pxlz-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Drag over highlight */
+.drop-zone-active {
+  border-color: var(--pxlz-orange) !important;
+  background: rgba(255,107,53,0.05) !important;
 }
