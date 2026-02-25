@@ -264,6 +264,7 @@ export default function Viewport() {
         },
       });
     });
+    scene.add(transform as any);
     transformRef.current = transform;
 
     // Store refs
@@ -324,6 +325,7 @@ export default function Viewport() {
     const animate = () => {
       animFrameRef.current = requestAnimationFrame(animate);
       orbit.update();
+      (transform as any).update();
       renderer.render(scene, camera);
     };
     animate();
@@ -333,6 +335,8 @@ export default function Viewport() {
       resizeObs.disconnect();
       renderer.domElement.removeEventListener('mousedown', onMouseDown);
       renderer.domElement.removeEventListener('click', onClick);
+      (scene as any).remove(transform);
+      (transform as any).dispose();
       renderer.dispose();
       if (mount.contains(renderer.domElement)) mount.removeChild(renderer.domElement);
       threeRef.current.scene = null;
@@ -393,11 +397,19 @@ export default function Viewport() {
         transform.attach(mesh);
         transform.setMode(state.gizmoMode);
         transform.space = state.transformSpace;
+        (transform as any).visible = true;
+        if ((transform as any)._gizmo) {
+          (transform as any)._gizmo.visible = true;
+        }
       } else {
         transform.detach();
       }
     } else {
       transform.detach();
+      (transform as any).visible = false;
+      if ((transform as any)._gizmo) {
+        (transform as any)._gizmo.visible = false;
+      }
     }
   }, [state.selectedId, state.gizmoMode, state.transformSpace]);
 
