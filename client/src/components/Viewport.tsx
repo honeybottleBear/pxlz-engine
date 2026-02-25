@@ -264,7 +264,6 @@ export default function Viewport() {
         },
       });
     });
-    scene.add(transform as any);
     transformRef.current = transform;
 
     // Store refs
