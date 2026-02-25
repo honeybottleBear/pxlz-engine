@@ -14,6 +14,14 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // GitHub Pages SPA redirect from 404.html
+      if (sessionStorage.redirect) {
+        const redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        window.history.replaceState(null, null, redirect);
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
     <script
       defer
