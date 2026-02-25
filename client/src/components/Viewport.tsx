@@ -264,8 +264,12 @@ export default function Viewport() {
         },
       });
     });
-    scene.add(transform as any);
+    // Don't add transform itself, but add its gizmo helper to the scene
     transformRef.current = transform;
+    // Add the gizmo helper to the scene so it renders
+    if ((transform as any)._gizmo) {
+      scene.add((transform as any)._gizmo);
+    }
 
     // Store refs
     threeRef.current.scene = scene;
@@ -335,7 +339,9 @@ export default function Viewport() {
       resizeObs.disconnect();
       renderer.domElement.removeEventListener('mousedown', onMouseDown);
       renderer.domElement.removeEventListener('click', onClick);
-      (scene as any).remove(transform);
+      if ((transform as any)._gizmo) {
+        scene.remove((transform as any)._gizmo);
+      }
       (transform as any).dispose();
       renderer.dispose();
       if (mount.contains(renderer.domElement)) mount.removeChild(renderer.domElement);
